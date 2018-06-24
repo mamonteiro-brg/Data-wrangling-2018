@@ -22,3 +22,12 @@ def prepare_dataset(df):
 	df['flag_document_9'] = df.flag_document_9.astype('int')
 	df['flag_document_13'] = df.flag_document_13.astype('int')
 	return df
+
+def clean_csv_data(df):
+	df = df.copy()
+
+	drop_duplicated_columns = ['FLAG_DOCUMENT_11_x', 'FLAG_DOCUMENT_14.1', 'FLAG_DOCUMENT_16_y',
+							   'FLAG_DOCUMENT_18_y', 'FLAG_DOCUMENT_3_y', 'FLAG_DOCUMENT_4_y', 
+							   'FLAG_DOCUMENT_6_y','FLAG_OWN_CAR_y','FLAG_OWN_REALTY,y']
+
+	return df.drop(columns=drop_columns)
